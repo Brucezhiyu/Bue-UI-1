@@ -3,10 +3,10 @@
     <Topnav/>
     <div class="banner">
       <h1>guluUI</h1>
-      <h2>一个哇塞的 UI 框架</h2>
+      <h2>一个很哇塞的 UI 框架</h2>
       <p class="actions">
-        <a>Github</a>
-        <a>开始</a>
+        <a href="https://github.com/Brucezhiyu/Bue-UI-1">Github</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
@@ -21,5 +21,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.banner {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  > .actions{
+    padding: 8px 0;
+    a {
+      margin:0 8px;
+      background: lightcyan;
+      display: inline-block;
+      height: 28px;
+      line-height: 28px;
+      border-radius: 6px;
+      padding: 0 8px;
+    }
+  }
+}
 </style>

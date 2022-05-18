@@ -9,10 +9,12 @@
 </template>
 <style lang="scss" scoped>
 .topnav {
+  position: relative;
   background: white;
   display: flex;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   padding: 20px;
+  z-index: 100;
   > .logo {
     max-width: 6em;
     margin-right: auto;
