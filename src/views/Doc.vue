@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Topnav/>
+  <div class="layout">
+    <Topnav class="nav"/>
     <div class="topnav">
       <div class="logo"></div>
       <div class="menu"></div>
@@ -45,12 +45,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+main {
+  overflow: auto;
+}
 aside {
   background: white;
-  width: 200px;
-  padding: 40px 24px 24px;
+  width: 270px;
+  padding: 100px 24px 24px;
   border-right: 1px solid lightgrey;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
   > h2 {
     margin-bottom: 4px;
   }
@@ -66,6 +72,33 @@ aside {
     position: fixed;
     top: 0;
     left: 0;
+  }
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  > .nav {
+    flex-shrink: 0;
+  }
+  > .content {
+    flex-grow: 1;
+    padding-top: 60px;
+    padding-left: 270px;
+    @media (max-width: 500px) {
+      padding-left: 0;
+    }
+  }
+}
+.content {
+  display: flex;
+  > aside {
+    flex-shrink: 0;
+  }
+  > main {
+    flex-grow: 1;
+    padding: 16px;
+    background:white;
   }
 }
 </style>
