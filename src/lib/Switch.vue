@@ -20,10 +20,14 @@ height: 22px;
 span{
   position: absolute;
   top: 2px;
-  left: 2px;
+  left:2px;
   height: 18px;
   width: 18px;
   border-radius: 9px;
   background: white;
+}
+button:hover>span{
+  left: calc(100% - 20px);
+
 }
 </style>
