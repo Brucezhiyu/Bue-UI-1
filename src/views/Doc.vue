@@ -34,33 +34,36 @@ import {inject, Ref} from 'vue';
 
 export default {
   components: {Topnav},
-  setup(){
-    const menuVisible=inject<Ref<boolean>>('menuVisible')
-    return {menuVisible}
+  setup() {
+    const menuVisible = inject<Ref<boolean>>('menuVisible');
+    return {menuVisible};
 
   }
 };
 </script>
 
 <style lang="scss" scoped>
-main{
-  padding-left: 200px;
-}
 aside {
   background: white;
   width: 200px;
-  margin-top: 110px;
-  position: fixed;
+  padding: 40px 24px 24px;
   border-right: 1px solid lightgrey;
-  top: 0;
-  left: 0;
+
   > h2 {
     margin-bottom: 4px;
   }
+
   > ol {
     > li {
       padding: 4px 0;
     }
+  }
+
+  @media (max-width: 500px) {
+    padding-top: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }
 </style>
