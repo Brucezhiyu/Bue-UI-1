@@ -27,19 +27,17 @@ button {
   background: lightgrey;
   border-radius: 11px;
   position: relative;
+  > span {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 18px;
+    width: 18px;
+    border-radius: 9px;
+    background: white;
+    transition: left 250ms;
+  }
 }
-
-span {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  height: 18px;
-  width: 18px;
-  border-radius: 9px;
-  background: white;
-  transition: left 250ms;
-}
-
 button.checked {
   background: dodgerblue;
 }
