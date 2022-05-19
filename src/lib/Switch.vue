@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss" scoped>
 .gulu-switch{
+  z-index: 1;
   height: 22px;
   width: 44px;
   border: none;
