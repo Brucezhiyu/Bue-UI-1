@@ -4,7 +4,7 @@
   </div>
   <h1>示例1</h1>
   <Button @click="toggle">toggle</Button>
-  <Dialog :visible="x"/>
+  <Dialog v-model:visible="x" :closeOnClickOverlay="true" :ok="f1" :cancel="f2"/>
 </template>
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
@@ -17,10 +17,14 @@ export default {
   },
   setup(){
     const x=ref(false)
+    const f1=()=>{
+      return false
+    }
+    const f2=()=>{}
     const toggle=()=>{
       x.value=!x.value
     }
-    return{x,toggle}
+    return{x,toggle,f1,f2}
   }
 
 }
