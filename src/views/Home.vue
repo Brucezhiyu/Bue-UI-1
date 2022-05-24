@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="topnavAndBanner">
     <Topnav/>
     <div class="banner">
       <h1>guluUI</h1>
@@ -21,23 +21,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.topnavAndBanner{
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(243,241,240,1) 100%, rgba(100,50,170,0) 100%);
+
+}
 .banner {
   padding: 100px 0;
   display: flex;
+  color: rgba(2,39,61);
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: white;
   > .actions{
     padding: 8px 0;
     a {
       margin:0 8px;
-      background: lightcyan;
+      color: white;
+      background: rgba(67,185,127);
       display: inline-block;
-      height: 28px;
+      height: 35px;
       line-height: 28px;
-      border-radius: 6px;
-      padding: 0 8px;
+      border-radius: 20px;
+      padding: 2px 20px;
     }
   }
 }
