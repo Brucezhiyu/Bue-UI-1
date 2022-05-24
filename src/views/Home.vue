@@ -18,17 +18,29 @@
           </svg>
         </router-link>
       </div>
-      <div class="icon-border">
+      <ul class="icon-border">
+        <li>
         <svg class="icon2" aria-hidden="true">
           <use xlink:href="#icon-Vue"></use>
         </svg>
+        <h3>基于 Vue 3</h3>
+        <p>骄傲地使用了 Vue 3 Composition API</p>
+        </li>
+        <li>
         <svg class="icon2" aria-hidden="true">
           <use xlink:href="#icon-typescript"></use>
         </svg>
-        <svg class="icon2" aria-hidden="true">
+        <h3>基于 TypeScript </h3>
+        <p>源代码采用 TypeScript 书写（非严格检查）</p>
+        </li>
+        <li>
+          <svg class="icon2" aria-hidden="true">
           <use xlink:href="#icon-light"></use>
         </svg>
-      </div>
+        <h3>代码易读</h3>
+        <p>每个组件的源代码都极其简洁</p>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -51,11 +63,20 @@ export default {
 
 .icon-border {
   border-top: 1px solid lightgrey;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  >h3 {
+    font-size: 40px;
+  }
+  >p {
+    font-size: 6px;
+  }
 
   .icon2 {
     padding-top: 20px;
-    height: 70px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
   }
 }
 
