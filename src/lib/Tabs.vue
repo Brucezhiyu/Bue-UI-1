@@ -1,10 +1,12 @@
 <template>
   <div class="gulu-tabs">
-    <div class="gulu-tabs-nav">
+    <div class="gulu-tabs-nav" ref="container">
       <div class="gulu-tabs-nav-item"
-           v-for="(t,index) in titles" @click="select(t)" :class="{selected:t === selected}" :key="index">{{ t }}
+           v-for="(t,index) in titles"
+           :ref="el=>{if(el)navItems[index]=el}"
+           @click="select(t)" :class="{selected:t === selected}" :key="index">{{ t }}
       </div>
-      <div class="gulu-tabs-nav-indicator"></div>
+      <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
       <component class="gulu-tabs-content-item"
@@ -16,6 +18,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
+import {onMounted, onUpdated, ref} from 'vue';
 
 export default {
   props: {
@@ -24,6 +27,21 @@ export default {
     }
   },
   setup(props, context) {
+    const navItems = ref<HTMLDivElement[]>([]);
+    const indicator = ref<HTMLDivElement>(null);
+    const container = ref<HTMLDivElement>(null);
+    const x = () => {
+      const divs = navItems.value;
+      const result = divs.filter(div => div.classList.contains('selected'))[0];
+      const {width} = result.getBoundingClientRect();
+      indicator.value.style.width = width + 'px';
+      const {left: left1} = container.value.getBoundingClientRect();
+      const {left: left2} = result.getBoundingClientRect();
+      const left = left2 - left1;
+      indicator.value.style.left = left + 'px';
+    };
+    onMounted(x);
+    onUpdated(x);
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -36,7 +54,7 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    return {defaults, titles, select};
+    return {defaults, titles, select, navItems, indicator, container};
   }
 };
 </script>
@@ -65,6 +83,7 @@ $border-color: #d9d9d9;
         color: $blue;
       }
     }
+
     &-indicator {
       position: absolute;
       height: 3px;
@@ -72,14 +91,17 @@ $border-color: #d9d9d9;
       left: 0;
       bottom: -1px;
       width: 100px;
+      transition: all 250ms;
     }
   }
 
 
   &-content {
     padding: 8px 0;
+
     &-item {
       display: none;
+
       &.selected {
         display: block;
       }
