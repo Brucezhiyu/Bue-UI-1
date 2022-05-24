@@ -29,7 +29,7 @@ export default {
   width: 100%;
   background: white;
   display: flex;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   z-index: 2;
   justify-content: center;

@@ -2,12 +2,33 @@
   <div class="topnavAndBanner">
     <Topnav/>
     <div class="banner">
-      <h1>guluUI</h1>
-      <h2>一个很哇塞的 UI 框架</h2>
-      <p class="actions">
-        <a href="https://github.com/Brucezhiyu/Bue-UI-1">Github</a>
-        <router-link to="/doc">开始</router-link>
-      </p>
+      <h1 class="bue1">Bue UI</h1>
+      <h2 class="bue2">一个很哇塞的 UI 组件库</h2>
+      <div class="actions">
+        <a href="https://github.com/Brucezhiyu/Bue-UI-1">
+          <span>GITHUB</span>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-github"></use>
+          </svg>
+        </a>
+        <router-link to="/doc" class="get-start">
+          <span>GET START</span>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-right"></use>
+          </svg>
+        </router-link>
+      </div>
+      <div class="icon-border">
+        <svg class="icon2" aria-hidden="true">
+          <use xlink:href="#icon-Vue"></use>
+        </svg>
+        <svg class="icon2" aria-hidden="true">
+          <use xlink:href="#icon-typescript"></use>
+        </svg>
+        <svg class="icon2" aria-hidden="true">
+          <use xlink:href="#icon-light"></use>
+        </svg>
+      </div>
     </div>
   </div>
 </template>
@@ -21,29 +42,68 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.topnavAndBanner{
+.topnavAndBanner {
+  overflow: hidden;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(243,241,240,1) 100%, rgba(100,50,170,0) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(243, 241, 240, 1) 100%, rgba(100, 50, 170, 0) 100%);
 
 }
+
+.icon-border {
+  border-top: 1px solid lightgrey;
+
+  .icon2 {
+    padding-top: 20px;
+    height: 70px;
+    width: 80px;
+  }
+}
+
 .banner {
-  padding: 100px 0;
+  padding: 150px 80px;
   display: flex;
-  color: rgba(2,39,61);
-  justify-content: center;
-  align-items: center;
+  color: rgba(2, 39, 61);
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
-  > .actions{
-    padding: 8px 0;
+
+  > .bue1 {
+    font-size: 80px
+  }
+
+  > .bue2 {
+    font-size: 40px;
+  }
+
+  > .actions {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+
+    .get-start {
+      background: rgba(67, 185, 127);
+    }
+
     a {
-      margin:0 8px;
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
       color: white;
-      background: rgba(67,185,127);
-      display: inline-block;
-      height: 35px;
-      line-height: 28px;
-      border-radius: 20px;
-      padding: 2px 20px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+      background: rgba(2, 39, 61);
+      line-height: 32px;
+      border-radius: 4px;
+      padding: 10px 150px;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      .icon {
+        padding-left: 5px;
+        height: 30px;
+        width: 30px;
+      }
     }
   }
 }

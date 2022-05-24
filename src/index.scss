@@ -8,15 +8,22 @@ ul,
 ol {
   list-style: none;
 }
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 a {
   text-decoration: none;
   color: inherit;
   &:hover {
-    border-bottom: 1px solid;
+    text-decoration:underline;
     cursor: pointer;
   }
 }
 body {
+  line-height: 1.5;
   font-size: 16px;
   // 为什么这样写 font-family
   // 答案见 https://github.com/zenozeng/fonts.css/
