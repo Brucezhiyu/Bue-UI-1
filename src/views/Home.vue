@@ -123,6 +123,7 @@ export default {
 
 .banner {
   padding-top: 130px;
+  height: 100vh;
   display: flex;
   color: rgba(2, 39, 61);
   justify-content: center;

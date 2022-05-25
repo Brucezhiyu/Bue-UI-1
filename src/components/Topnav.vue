@@ -49,7 +49,7 @@ export default {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   color: rgba(2, 39, 61);
   padding: 20px;
-  z-index: 2;
+  z-index: 20;
   justify-content: center;
   align-items: center;
 
