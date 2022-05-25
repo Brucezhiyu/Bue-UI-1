@@ -7,10 +7,7 @@ import DialogDemo from './components/DialogDemo.vue'
 import TabsDemo from './components/TabsDemo.vue'
 import { h } from 'vue';
 import Markdown from './components/Markdown.vue';
-import DocDemo from './components/Docdemo.vue'
-import Intro from './views/Intro.vue'
-import GetStarted from './views/Getstarted.vue'
-import Install from './views/Install.vue'
+
 const history = createWebHashHistory();
 const md=filename=>h(Markdown,{path:`../Markdown/${filename}.md`,key:filename})
 export const router = createRouter({
@@ -26,7 +23,7 @@ export const router = createRouter({
             children:[
                 {
                    path:'',
-                   component:DocDemo
+                   redirect:'/doc/intro'
                 },
                 {
                   path:'intro',
