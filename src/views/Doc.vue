@@ -91,8 +91,8 @@ aside {
 
       .router-link-active {
         background: rgba(67, 185, 127, 0.1);
-        position: relative;
-
+        border-right:4px solid rgba(67, 185, 127 );
+        color:rgba(67, 185, 127) ;
         //&::after {
         //  position: absolute;
         //  right: 0;
