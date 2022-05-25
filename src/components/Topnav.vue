@@ -12,13 +12,23 @@
       </li>
 
     </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
+    <span v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
+      <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-menu"></use>
+          </svg>
+    </span>
   </div>
 </template>
 <script lang="ts">
 import {inject, Ref} from 'vue';
 
 export default {
+  props:{
+    toggleMenuButtonVisible:{
+      type:Boolean,
+      default:false
+    }
+  },
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuVisible');
     const toggleMenu = () => {
@@ -69,12 +79,16 @@ export default {
   > .toggleAside {
     width: 24px;
     height: 24px;
-    background: red;
     position: absolute;
-    left: 16px;
+    left: 24px;
     top: 50%;
     transform: translateY(-50%);
     display: none;
+    >.icon{
+      width: 24px;
+      height: 24px;
+    }
+
   }
 
   @media (max-width: 500px) {
@@ -86,6 +100,7 @@ export default {
     }
     > .toggleAside {
       display: inline-block;
+
     }
   }
 }
