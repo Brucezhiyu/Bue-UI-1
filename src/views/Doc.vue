@@ -8,17 +8,17 @@
     <div class="content">
       <aside v-if="menuVisible">
         <h2>文档</h2>
-          <ol>
-            <li>
-              <router-link to="/doc/intro">介绍</router-link>
-            </li>
-            <li>
-              <router-link to="/doc/install">安装</router-link>
-            </li>
-            <li>
-              <router-link to="/doc/get-started">开始使用</router-link>
-            </li>
-          </ol>
+        <ol>
+          <li>
+            <router-link to="/doc/intro">介绍</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/install">安装</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/get-started">开始使用</router-link>
+          </li>
+        </ol>
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -57,25 +57,50 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 main {
   overflow: auto;
 }
+
 aside {
   background: white;
   width: 270px;
-  padding: 100px 24px 24px;
+  padding: 100px 0;
   border-right: 1px solid lightgrey;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
+
   > h2 {
     margin-bottom: 4px;
+    padding: 0 24px;
   }
 
   > ol {
     > li {
-      padding: 4px 0;
+      > a {
+        display: block;
+        padding: 10px 24px;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      .router-link-active {
+        background: rgba(67, 185, 127, 0.1);
+        position: relative;
+
+        //&::after {
+        //  position: absolute;
+        //  right: 0;
+        //  width: 5px;
+        //  height: auto;
+        //  background: rgba(67, 185, 127);
+        //}
+      }
+
     }
   }
 
@@ -86,13 +111,16 @@ aside {
     left: 0;
   }
 }
+
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
   > .nav {
     flex-shrink: 0;
   }
+
   > .content {
     flex-grow: 1;
     padding-top: 60px;
@@ -102,15 +130,18 @@ aside {
     }
   }
 }
+
 .content {
   display: flex;
+
   > aside {
     flex-shrink: 0;
   }
+
   > main {
     flex-grow: 1;
     padding: 16px;
-    background:white;
+    background: white;
   }
 }
 </style>
