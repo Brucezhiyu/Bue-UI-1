@@ -2,6 +2,7 @@
   <div class="topnavAndBanner">
     <Topnav/>
     <div class="banner">
+
       <h1 class="bue1">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-icon-b"></use>
@@ -48,11 +49,13 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="">
 
     </div>
+    <span class="rightBox"></span>
+
   </div>
+
+
 </template>
 
 <script lang="ts">
@@ -64,10 +67,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .topnavAndBanner {
   overflow-x: hidden;
+  z-index: -2;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(243, 241, 240, 1) 100%, rgba(100, 50, 170, 0) 100%);
-
+>.rightBox{
+  width: 300px;
+  height: 300px;
+  right: 200px;
+  bottom: 200px;
+  position: fixed;
+  background-size: 100%;
+  background-image: url("../assets/logo.png");
+}
 }
 
 .icon-border {
@@ -111,6 +124,7 @@ export default {
         margin-top: 23px;
         grid-area: text
       }
+
     }
   }
 
@@ -138,6 +152,8 @@ export default {
     flex-direction: column;
   }
 
+
+
   > .bue1 {
     font-size: 60px;
     @media (min-width: 600px) {
@@ -151,6 +167,7 @@ export default {
       font-size: 40px;
     }
   }
+
 
   > .actions {
     display: flex;
@@ -171,9 +188,10 @@ export default {
       line-height: 32px;
       border-radius: 4px;
       padding: 10px 60px;
-@media (min-width: 600px) {
-  padding: 10px 150px;
-}
+      @media (min-width: 600px) {
+        padding: 10px 150px;
+      }
+
       &:hover {
         text-decoration: none;
       }
