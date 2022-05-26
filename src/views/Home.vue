@@ -51,7 +51,6 @@
       </div>
 
     </div>
-    <span class="rightBox"></span>
 
   </div>
 
@@ -71,19 +70,7 @@ export default {
 .topnavAndBanner {
   overflow-x: hidden;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(243, 241, 240, 1) 100%, rgba(100, 50, 170, 0) 100%);
->.rightBox{
 
-  @media (min-width: 1200px) {
-
-    width: 350px;
-    height: 410px;
-    right: 200px;
-    bottom: 150px;
-    position: fixed;
-    background-size: 100%;
-    background-image: url("../assets/man.png");
-  }
-}
 }
 
 .icon-border {
