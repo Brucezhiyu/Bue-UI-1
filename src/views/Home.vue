@@ -70,16 +70,19 @@ export default {
 
 .topnavAndBanner {
   overflow-x: hidden;
-  z-index: -2;
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(243, 241, 240, 1) 100%, rgba(100, 50, 170, 0) 100%);
 >.rightBox{
-  width: 300px;
-  height: 300px;
-  right: 200px;
-  bottom: 200px;
-  position: fixed;
-  background-size: 100%;
-  background-image: url("../assets/logo.png");
+
+  @media (min-width: 1200px) {
+
+    width: 350px;
+    height: 410px;
+    right: 200px;
+    bottom: 150px;
+    position: fixed;
+    background-size: 100%;
+    background-image: url("../assets/man.png");
+  }
 }
 }
 
@@ -90,8 +93,8 @@ export default {
   @media (min-width: 600px) {
     width: 600px;
   }
-  @media (min-width: 900px) {
-    width: 900px;
+  @media (min-width: 800px) {
+    width: 800px;
   }
 
   > ul {
@@ -145,7 +148,7 @@ export default {
   flex-direction: column;
   @media (min-width: 600px) {
     padding-top: 150px;
-    padding-left: 150px;
+    padding-left: 200px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;

@@ -4,7 +4,7 @@
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-icon-b"></use>
       </svg>
-      Bue UI
+      <strong>Bue UI</strong>
     </router-link>
     <ul class="menu">
       <li>
@@ -47,6 +47,7 @@ export default {
   background: white;
   display: flex;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-size: 19px;
   color: rgba(2, 39, 61);
   padding: 20px;
   z-index: 20;
