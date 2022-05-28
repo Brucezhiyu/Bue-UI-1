@@ -1,6 +1,6 @@
 <template>
   <router-view/>
-  <span class="rightBox"></span>
+  <img src="./assets/man.png" class="rightBox">
 </template>
 
 <script lang="ts">
