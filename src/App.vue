@@ -1,6 +1,5 @@
 <template>
   <router-view/>
-  <img src="./assets/man.png" class="rightBox">
 </template>
 
 <script lang="ts">
@@ -24,17 +23,5 @@ export default {
 };
 </script>
 <style lang="scss">
-.rightBox{
 
-  @media (min-width: 1200px) {
-
-    width: 350px;
-    height: 410px;
-    right: 200px;
-    bottom: 150px;
-    position: fixed;
-    background-size: 100%;
-    background-image: url("/src/assets/man.png");
-  }
-}
 </style>
