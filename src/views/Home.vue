@@ -68,9 +68,9 @@ export default {
 
 <style lang="scss" scoped>
 .rightBox{
-
+  position: fixed;
+  overflow: hidden;
   @media (min-width: 1200px) {
-
     width: 350px;
     height: 410px;
     right: 200px;
